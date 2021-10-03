@@ -7,7 +7,7 @@ const API_URL = "https://api.openweathermap.org/data/2.5/forecast/daily";
 // Base source icon
 const API_URL_ICON = "http://openweathermap.org/img/wn/";
 
-//?q={city name}&cnt={cnt}&appid={API key}
+
 class API_3DAY_WEATHER{
   constructor(city){
     // Si la ville n'est pas définit alors la ville par défault est Paris
