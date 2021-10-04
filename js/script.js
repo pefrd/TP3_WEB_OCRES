@@ -41,19 +41,19 @@ function start() {
       console.error(error);
     });
 
-    //lancer l'affichage des jours suivant
-    getThreeDayForecast(city);
 }
 
 //fonction pour afficher les 3 jours de météo
-function getThreeDayForecast(city){
+function getThreeDayForecast(){
   
-  // Création de l'objet api3DayWeather
-  const api3DayWeather = new API_3DAY_WEATHER(city);
+  //récupérer ville à afficher
+  city = ville();
+  
+  // Création de l'objet apiWeather3Day
+  const apiWeather3Day = new API_WEATHER(city);
   // Appel de la fonction fetchTodayForecast
-
-  api3DayWeather
-    .fetchTodayForecast()
+  apiWeather3Day
+    .fetch3DayForecast()
     .then(function(response) {
       // Récupère la donnée d'une API
       const data = response.data;
