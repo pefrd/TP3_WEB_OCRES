@@ -22,7 +22,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
-  <body onload="getThreeDayForecast()"> <!--Actualisation de l'API automatique-->
+  <body onload="start()"> <!--Actualisation de l'API automatique-->
     <div
       class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
     >
@@ -40,7 +40,7 @@
       <div class="input-group mb-5 offset-4 col-4">
         <input id="city-input" type="text" class="form-control" placeholder="Rentrer le nom d'une ville">
         <div class="input-group-append">
-          <button id="city-input-button" class="btn btn-success" type="submit" onclick='start()'>Actualiser</button>
+          <button id="city-input-button" class="btn btn-success" type="submit" onclick='getThreeDayForecast()'>Actualiser</button>
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@
             </h2>
             <div>
               <p id="tomorow-forecast-more-info"></p>
-              <div id="icon-weather-container" ></div>
+              <div id="tomorow-icon-weather-container" ></div>
               <h3 id="tomorow-forecast-temp"> </h3>
             </div>
           </div>

@@ -46,9 +46,8 @@ function start() {
 //fonction pour afficher les 3 jours de météo
 function getThreeDayForecast(){
   
-  //récupérer ville à afficher
   city = ville();
-  
+
   // Création de l'objet apiWeather3Day
   const apiWeather3Day = new API_WEATHER(city);
   // Appel de la fonction fetchTodayForecast
@@ -57,17 +56,18 @@ function getThreeDayForecast(){
     .then(function(response) {
       // Récupère la donnée d'une API
       const data = response.data;
+      console.log(data);
 
       // On récupère l'information principal
       const main = data.list[0].weather[0].main;
       const description = data.list[0].weather[0].description;
       const temp = data.list[0].temp.day;
-      const icon = api3DayWeather.getHTMLElementFromIcon(data.list[0].weather[0].icon);
+      const icon = apiWeather3Day.getHTMLElementFromIcon(data.list[0].weather[0].icon);
 
       // Modifier le DOM
       document.getElementById('tomorow-forecast-main').innerHTML = main;
       document.getElementById('tomorow-forecast-more-info').innerHTML = description;
-      document.getElementById('icon-weather-container').innerHTML = icon;
+      document.getElementById('tomorow-icon-weather-container').innerHTML = icon;
       document.getElementById('tomorow-forecast-temp').innerHTML = `${temp}°C`;
       
     })
