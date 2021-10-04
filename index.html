@@ -22,7 +22,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
-  <body onload="start()"> <!--Actualisation de l'API automatique-->
+  <body onload="launch()"> <!--Actualisation de l'API automatique-->
     <div
       class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
     >
@@ -40,7 +40,7 @@
       <div class="input-group mb-5 offset-4 col-4">
         <input id="city-input" type="text" class="form-control" placeholder="Rentrer le nom d'une ville">
         <div class="input-group-append">
-          <button id="city-input-button" class="btn btn-success" type="submit" onclick='getThreeDayForecast()'>Actualiser</button>
+          <button id="city-input-button" class="btn btn-success" type="submit" onclick='launch()'>Actualiser</button>
         </div>
       </div>
     </div>
@@ -75,12 +75,12 @@
             <h4 class="my-0 font-weight-normal">Demain</h4>
           </div>
           <div class="card-body">
-            <h2 id="tomorow-forecast-main" class="card-title">
+            <h2 id="day0-forecast-main" class="card-title">
             </h2>
             <div>
-              <p id="tomorow-forecast-more-info"></p>
-              <div id="tomorow-icon-weather-container" ></div>
-              <h3 id="tomorow-forecast-temp"> </h3>
+              <p id="day0-forecast-more-info"></p>
+              <div id="day0-icon-weather-container" ></div>
+              <h3 id="day0-forecast-temp"> </h3>
             </div>
           </div>
         </div>
@@ -89,12 +89,12 @@
             <h4 class="my-0 font-weight-normal">Après demain</h4>
           </div>
           <div class="card-body">
-            <h2 id="today-forecast-main" class="card-title">
+            <h2 id="day1-forecast-main" class="card-title">
             </h2>
             <div>
-              <p id="today-forecast-more-info"></p>
-              <div id="icon-weather-container" ></div>
-              <h3 id="today-forecast-temp"> </h3>
+              <p id="day1-forecast-more-info"></p>
+              <div id="day1-icon-weather-container" ></div>
+              <h3 id="day1-forecast-temp"> </h3>
             </div>
           </div>
         </div>
@@ -103,12 +103,12 @@
             <h4 class="my-0 font-weight-normal">Encore après demain</h4>
           </div>
           <div class="card-body">
-            <h2 id="today-forecast-main" class="card-title">
+            <h2 id="day2-forecast-main" class="card-title">
             </h2>
             <div>
-              <p id="today-forecast-more-info"></p>
-              <div id="icon-weather-container" ></div>
-              <h3 id="today-forecast-temp"> </h3>
+              <p id="day2-forecast-more-info"></p>
+              <div id="day2-icon-weather-container" ></div>
+              <h3 id="day2-forecast-temp"> </h3>
             </div>
           </div>
         </div>

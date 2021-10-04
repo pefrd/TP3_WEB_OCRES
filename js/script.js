@@ -8,6 +8,12 @@ function ville(){
   return city;
 }
 
+//fonction launch
+function launch() {
+  start();
+  getThreeDayForecast();
+}
+
 
 // Fonction appelée lors du click du bouton
 function start() {
@@ -58,18 +64,20 @@ function getThreeDayForecast(){
       const data = response.data;
       console.log(data);
 
-      // On récupère l'information principal
-      const main = data.list[0].weather[0].main;
-      const description = data.list[0].weather[0].description;
-      const temp = data.list[0].temp.day;
-      const icon = apiWeather3Day.getHTMLElementFromIcon(data.list[0].weather[0].icon);
+      for(var i=0; i<3; i++) {
+        console.log("boucle" + i );
+        // On récupère l'information principal
+        var main = data.list[i].weather[0].main;
+        var description = data.list[i].weather[0].description;
+        var temp = data.list[i].temp.day;
+        var icon = apiWeather3Day.getHTMLElementFromIcon(data.list[i].weather[0].icon);
 
-      // Modifier le DOM
-      document.getElementById('tomorow-forecast-main').innerHTML = main;
-      document.getElementById('tomorow-forecast-more-info').innerHTML = description;
-      document.getElementById('tomorow-icon-weather-container').innerHTML = icon;
-      document.getElementById('tomorow-forecast-temp').innerHTML = `${temp}°C`;
-      
+        // Modifier le DOM
+        document.getElementById('day' + i + '-forecast-main').innerHTML = main;
+        document.getElementById('day' + i + '-forecast-more-info').innerHTML = description;
+        document.getElementById('day' + i + '-icon-weather-container').innerHTML = icon;
+        document.getElementById('day' + i + '-forecast-temp').innerHTML = `${temp}°C`;
+      }
     })
     .catch(function(error) {
       // Affiche une erreur
